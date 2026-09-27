@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ "$(stat -c 
+find hello -user guillaume -exec chown vincent {} +

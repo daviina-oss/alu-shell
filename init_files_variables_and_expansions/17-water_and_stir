@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c 'import os;w="water";s="stir.";b="bestchol";n=sum(w.index(c)*5**i for i,c in enumerate(os.environ["WATER"][::-1]))+sum(s.index(c)*5**i for i,c in enumerate(os.environ["STIR"][::-1]));r="";exec("while n:r=b[n%8]+r;n//=8");print(r or b[0])'
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
